@@ -1,8 +1,6 @@
 package com.project.yelboAssignment.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Category {
@@ -12,14 +10,14 @@ public class Category {
     public long categoryCode;
 
     @Column(name = "value")
-    public int value;
+    public long value = 0L;
 
 
     public Category() {
 
     }
 
-    public Category(int generatedCode, int value) {
+    public Category(long generatedCode, long value) {
         this.categoryCode = generatedCode;
         this.value = value;
     }
@@ -32,11 +30,11 @@ public class Category {
         this.categoryCode = generatedCode;
     }
 
-    public int getValue() {
+    public long getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(long value) {
         this.value = value;
     }
 }
